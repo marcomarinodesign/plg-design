@@ -1,0 +1,100 @@
+import {
+  Card,
+  CardContent,
+  CardFooter,
+} from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
+import { ScoreGauge } from "@/components/dashboard/ScoreGauge"
+import type { DashboardHero } from "@/lib/dashboard-types"
+import { Share2, Wrench, Droplets } from "lucide-react"
+import { cn } from "@/lib/utils"
+
+type ScoreHeroCardProps = {
+  hero: DashboardHero
+  className?: string
+}
+
+export function ScoreHeroCard({ hero, className }: ScoreHeroCardProps) {
+  return (
+    <Card
+      className={cn(
+        "flex w-full max-w-[418px] flex-col border-0 rounded-[20px] bg-[#beff50] p-4 shadow-sm xl:h-[576px] xl:min-h-[576px]",
+        className
+      )}
+    >
+      <CardContent className="flex flex-1 flex-col items-center justify-between gap-2.5 px-0 pt-0 pb-0">
+        {/* Logo placeholder: 70px, círculo blanco borde fino */}
+        <div
+          className="size-[70px] shrink-0 rounded-full border border-white bg-white object-cover shadow-sm"
+          aria-hidden
+        >
+          <div className="flex size-full items-center justify-center rounded-full bg-white">
+            <Wrench className="size-8 text-[#f59e0b]" aria-hidden />
+          </div>
+        </div>
+
+        {/* Nombre empresa: letter-spacing -0.01em, line-height 32px */}
+        <b
+          className="text-center text-black"
+          style={{ letterSpacing: "-0.01em", lineHeight: "32px" }}
+        >
+          {hero.businessName}
+        </b>
+
+        {/* Plinng Score: 293px, label 48px/800, value 80px/500, /100 20px */}
+        <div className="flex w-[293px] flex-col items-center justify-center gap-0">
+          <div
+            className="w-full text-center text-black"
+            style={{
+              letterSpacing: "-0.01em",
+              lineHeight: "48px",
+              fontWeight: 800,
+              fontSize: "48px",
+            }}
+          >
+            Plinng Score
+          </div>
+          <div className="flex items-baseline justify-center gap-0.5">
+            <span
+              className="tabular-nums text-black"
+              style={{ fontSize: "80px", fontWeight: 500 }}
+            >
+              {hero.plinngScore}
+            </span>
+            <span
+              className="align-top text-black"
+              style={{ fontSize: "20px", fontWeight: 500 }}
+            >
+              /{hero.maxScore}
+            </span>
+          </div>
+        </div>
+
+        {/* Gauge 236.7 x 127.2 */}
+        <div className="w-[236.7px] shrink-0">
+          <ScoreGauge value={hero.plinngScore} max={hero.maxScore} />
+        </div>
+      </CardContent>
+      <CardFooter className="mt-auto shrink-0 px-0 pb-0 pt-0">
+        <div
+          className="flex w-[290px] items-center gap-5 text-[14px] text-white"
+          style={{ lineHeight: "24px", fontWeight: 500 }}
+        >
+          <Button
+            variant="dark"
+            className="h-[52px] flex-1 rounded-[36px] px-4 py-2.5 font-medium"
+          >
+            Activa Plinng Pro
+          </Button>
+          <Button
+            variant="outline"
+            className="h-[52px] flex-1 gap-2 rounded-[36px] border border-black bg-white px-4 py-2.5 font-medium text-black hover:bg-white/90 hover:text-black"
+          >
+            <Share2 className="size-4" aria-hidden />
+            Compartir
+          </Button>
+        </div>
+      </CardFooter>
+    </Card>
+  )
+}

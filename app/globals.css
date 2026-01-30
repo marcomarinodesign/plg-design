@@ -122,4 +122,104 @@
   body {
     @apply bg-background text-foreground;
   }
+  button {
+    cursor: pointer;
+  }
+  .heading-xl {
+    font-family: var(--font-sans);
+    font-size: 3rem;
+    line-height: 1;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .heading-lg {
+    font-family: var(--font-sans);
+    font-size: 2.25rem;
+    line-height: 1.111;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .heading-md {
+    font-family: var(--font-sans);
+    font-size: 1.875rem;
+    line-height: 1.2;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .heading-sm {
+    font-family: var(--font-sans);
+    font-size: 1.5rem;
+    line-height: 1.333;
+    font-weight: 700;
+    letter-spacing: -0.01em;
+  }
+  .container-padding-x {
+    padding-inline: 1.5rem;
+  }
+  .section-padding-y {
+    padding-block: 3rem; /* 48px */
+  }
+  .section-title-gap-xl {
+    gap: 1.5rem;
+  }
+  .section-title-gap-lg {
+    gap: 1.25rem;
+  }
+  .section-title-gap-md {
+    gap: 1.25rem;
+  }
+  .section-title-gap-sm {
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 64rem) {
+  .heading-xl {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+  .heading-lg {
+    font-size: 1.875rem;
+    line-height: 1.2;
+  }
+  .heading-md {
+    font-size: 1.5rem;
+    line-height: 1.2;
+  }
+  .heading-sm {
+    font-size: 1.5rem;
+    line-height: 1.333;
+  }
+  .container-padding-x {
+    padding-inline: 1.5rem;
+  }
+  .section-padding-y {
+    padding-block: 4rem; /* 40px */
+  }
+  .section-title-gap-xl {
+    gap: 1rem;
+  }
+  .section-title-gap-lg {
+    gap: 1rem;
+  }
+  .section-title-gap-md {
+    gap: 1rem;
+  }
+  .section-title-gap-sm {
+    gap: 1rem;
+  }
+}
+
+/* Logo marquee slider */
+@keyframes marquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
 }

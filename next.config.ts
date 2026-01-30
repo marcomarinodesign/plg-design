@@ -1,7 +1,16 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    localPatterns: [{ pathname: "/**" }],
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ui.shadcn.com",
+        pathname: "/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
