@@ -16,7 +16,7 @@ export type ScoreMetric = {
   id: string
   label: string
   score: number
-  icon: LucideIcon
+  icon: LucideIcon | string
 }
 
 export type DashboardHero = {

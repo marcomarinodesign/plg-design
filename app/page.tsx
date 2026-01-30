@@ -9,9 +9,9 @@ export default function Home() {
       <Hero
         title="Desbloquea tu potencial"
         subtitle="Analizamos tu presencia digital y te mostramos cómo activar más clientes."
-        tagline="Plinng Pro"
-        primaryCta={{ label: "Empenzamos ahora", href: "#" }}
-        secondaryCta={{ label: "Explore", href: "#" }}
+        badge="What's new-"
+        primaryCta={{ label: "Web", href: "/dashboard" }}
+        secondaryCta={{ label: "Explorar", href: "/dashboard" }}
         imageSrc="/hero-collage.png"
         imageAlt="Montaje de personas en entornos profesionales: emprendimiento y diversidad"
       />

@@ -11,8 +11,8 @@ const CENTER_X = 100
 const CENTER_Y = 100
 const SEMICIRCLE_LENGTH = Math.PI * RADIUS
 
-const LIME_GREEN = "#beff50"
-const DARK_OLIVE = "#3E8E00"
+const LIME_GREEN = "#a0d33e"
+const DARK_OLIVE = "#5d852a"
 
 export function ScoreGauge({
   value,
@@ -30,41 +30,35 @@ export function ScoreGauge({
       preserveAspectRatio="xMidYMid meet"
       aria-hidden
     >
-      {/* Arco fondo (gris claro) */}
-      <path
-        d={`M ${CENTER_X - RADIUS} ${CENTER_Y} A ${RADIUS} ${RADIUS} 0 0 1 ${CENTER_X + RADIUS} ${CENTER_Y}`}
-        fill="none"
-        stroke="rgb(0 0 0 / 0.08)"
-        strokeWidth="14"
-        strokeLinecap="round"
-      />
-      {/* Segmento derecho: verde oliva oscuro (desde value hasta 100%) */}
+      {/* Segmento derecho: verde oliva #5d852a (desde value hasta 100%) */}
       <path
         d={`M ${CENTER_X - RADIUS} ${CENTER_Y} A ${RADIUS} ${RADIUS} 0 0 1 ${CENTER_X + RADIUS} ${CENTER_Y}`}
         fill="none"
         stroke={DARK_OLIVE}
-        strokeWidth="12"
+        strokeWidth="14"
         strokeLinecap="round"
         strokeDasharray={`${SEMICIRCLE_LENGTH - strokeDashLength} ${SEMICIRCLE_LENGTH}`}
         strokeDashoffset={-strokeDashLength}
         className="transition-[stroke-dashoffset] duration-500 ease-out"
       />
-      {/* Segmento izquierdo: lima (desde 0 hasta value) */}
+      {/* Segmento izquierdo: lima #a0d33e (desde 0 hasta value) */}
       <path
         d={`M ${CENTER_X - RADIUS} ${CENTER_Y} A ${RADIUS} ${RADIUS} 0 0 1 ${CENTER_X + RADIUS} ${CENTER_Y}`}
         fill="none"
         stroke={LIME_GREEN}
-        strokeWidth="12"
+        strokeWidth="14"
         strokeLinecap="round"
         strokeDasharray={`${strokeDashLength} ${SEMICIRCLE_LENGTH}`}
         strokeDashoffset={0}
         className="transition-[stroke-dashoffset] duration-500 ease-out"
       />
-      {/* Aguja tipo flecha (triángulo), verde oliva, en el centro inferior */}
+      {/* Aguja flecha, verde oliva #5d852a, desde centro inferior */}
       <g transform={`rotate(${needleRotation} ${CENTER_X} ${CENTER_Y})`}>
         <polygon
           points={`${CENTER_X},${CENTER_Y - RADIUS + 4} ${CENTER_X - 8},${CENTER_Y + 6} ${CENTER_X + 8},${CENTER_Y + 6}`}
           fill={DARK_OLIVE}
+          stroke={DARK_OLIVE}
+          strokeLinejoin="round"
         />
       </g>
     </svg>

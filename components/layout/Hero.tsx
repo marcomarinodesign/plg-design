@@ -7,6 +7,7 @@ export interface HeroProps {
   title?: string;
   subtitle?: string;
   tagline?: string;
+  badge?: string;
   primaryCta?: { label: string; href?: string };
   secondaryCta?: { label: string; href?: string };
   imageSrc?: string;
@@ -17,6 +18,7 @@ export function Hero({
   title,
   subtitle,
   tagline,
+  badge,
   primaryCta,
   secondaryCta,
   imageSrc,
@@ -26,6 +28,7 @@ export function Hero({
     title,
     subtitle,
     tagline,
+    badge,
     primaryCta,
     secondaryCta,
     imageSrc,

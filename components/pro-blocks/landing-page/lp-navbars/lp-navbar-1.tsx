@@ -44,15 +44,15 @@ export function LpNavbar1() {
         <div className="flex items-center justify-between">
           <Link
             href="/"
-            aria-label="Go to homepage"
-            className="relative flex h-16 w-16 max-w-full shrink-0 items-center justify-center overflow-hidden md:h-20 md:w-20"
+            aria-label="Ir a inicio"
+            className="relative flex h-9 shrink-0 items-center overflow-hidden md:h-10"
           >
             <Image
-              src="/logo.png"
-              alt="Logo"
-              width={80}
-              height={80}
-              className="h-full w-full object-contain object-center"
+              src="/logo-plinng.png"
+              alt="plinng"
+              width={120}
+              height={40}
+              className="h-full w-auto object-contain object-left"
             />
           </Link>
           <Button
@@ -68,7 +68,7 @@ export function LpNavbar1() {
         {/* Desktop Navigation */}
         <div className="hidden w-full flex-row justify-end gap-5 md:flex">
           <NavMenuItems />
-          <Link href="#">
+          <Link href="/dashboard">
             <Button>Empezar</Button>
           </Link>
         </div>
@@ -77,7 +77,7 @@ export function LpNavbar1() {
         {isMenuOpen && (
           <div className="flex w-full flex-col justify-end gap-5 pb-2.5 md:hidden">
             <NavMenuItems />
-            <Link href="#">
+            <Link href="/dashboard">
               <Button className="w-full">Empezar</Button>
             </Link>
           </div>

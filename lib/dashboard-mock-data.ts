@@ -1,19 +1,11 @@
-import {
-  Eye,
-  Instagram,
-  MessageCircle,
-  Search,
-  Users,
-  MapPin,
-} from "lucide-react"
 import type { DashboardData, RadarArea } from "./dashboard-types"
 
 const radarAreas: RadarArea[] = [
-  { subject: "Visibilidad Google", value: 72, fullMark: 100 },
-  { subject: "Google", value: 65, fullMark: 100 },
-  { subject: "Confianza Visual", value: 58, fullMark: 100 },
-  { subject: "Actividad", value: 80, fullMark: 100 },
-  { subject: "Inversión", value: 45, fullMark: 100 },
+  { subject: "Reputación", value: 72, fullMark: 100 },
+  { subject: "Visibilidad", value: 65, fullMark: 100 },
+  { subject: "Comunicación", value: 58, fullMark: 100 },
+  { subject: "Competitors", value: 80, fullMark: 100 },
+  { subject: "Engagement", value: 47, fullMark: 100 },
 ]
 
 export const dashboardMockData: DashboardData = {
@@ -45,11 +37,11 @@ export const dashboardMockData: DashboardData = {
     },
   ],
   scoreMetrics: [
-    { id: "1", label: "Propuesta de valor", score: 49, icon: Eye },
-    { id: "2", label: "Instagram", score: 50, icon: Instagram },
-    { id: "3", label: "Canal de contacto", score: 52, icon: MessageCircle },
-    { id: "4", label: "SEO", score: 48, icon: Search },
-    { id: "5", label: "Competitors", score: 55, icon: Users },
-    { id: "6", label: "Google Maps", score: 51, icon: MapPin },
+    { id: "1", label: "Propuesta de valor", score: 49, icon: "/icons/target.png" },
+    { id: "2", label: "Instagram", score: 50, icon: "/icons/instagram.png" },
+    { id: "3", label: "Canal de contacto", score: 52, icon: "/icons/whatsapp.png" },
+    { id: "4", label: "SEO", score: 48, icon: "/icons/google.png" },
+    { id: "5", label: "Competitors", score: 55, icon: "/icons/component.png" },
+    { id: "6", label: "Google Maps", score: 51, icon: "/icons/map-pin.png" },
   ],
 }

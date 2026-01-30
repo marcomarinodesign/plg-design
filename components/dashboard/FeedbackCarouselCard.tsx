@@ -25,7 +25,7 @@ export function FeedbackCarouselCard({
   return (
     <div
       className={cn(
-        "flex h-[230px] w-full max-w-[418px] items-center gap-4 rounded-2xl border border-border bg-muted/30 p-4 shadow-sm",
+        "flex h-[200px] w-full max-w-[418px] items-center gap-4 rounded-2xl bg-[#f5f5eb] p-4",
         className
       )}
     >
