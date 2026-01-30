@@ -25,7 +25,7 @@ export function FeedbackCarouselCard({
   return (
     <div
       className={cn(
-        "flex h-[230px] w-full max-w-[418px] items-center gap-4 rounded-[20px] border border-[#ebebeb] bg-[#fbfbf7] p-4",
+        "flex h-[230px] w-full max-w-[418px] items-center gap-4 rounded-2xl border border-border bg-muted/30 p-4 shadow-sm",
         className
       )}
     >
@@ -37,7 +37,7 @@ export function FeedbackCarouselCard({
           <CarouselPrevious
             variant="outline"
             size="icon"
-            className="!relative !left-0 !top-0 h-8 w-8 shrink-0 !translate-x-0 !translate-y-0 rounded-[30px] border-[#ebebeb] bg-[#ebebeb] hover:bg-[#e0e0e0]"
+            className="!relative !left-0 !top-0 h-8 w-8 shrink-0 !translate-x-0 !translate-y-0 rounded-[30px] border-border bg-muted hover:bg-muted/80"
           />
           <div className="min-w-0 flex-1 overflow-hidden">
           <CarouselContent className="-ml-4">
@@ -46,20 +46,14 @@ export function FeedbackCarouselCard({
                 key={item.id}
                 className="flex flex-col gap-2 pl-4"
               >
-                <div
-                  className="flex items-center gap-2 font-mono font-bold uppercase leading-5 text-black"
-                  style={{ fontSize: 14, lineHeight: "20px" }}
-                >
+                <div className="flex items-center gap-2 text-sm font-bold uppercase tracking-wide leading-5 text-black">
                   <ThumbsUp className="size-4 shrink-0" aria-hidden />
                   {title}
                 </div>
                 <p className="font-semibold leading-tight text-black">
                   {item.title}
                 </p>
-                <p
-                  className="text-black/90"
-                  style={{ fontSize: 16, lineHeight: "28px" }}
-                >
+                <p className="text-base leading-7 text-black/90">
                   {item.description}
                 </p>
               </CarouselItem>
@@ -69,7 +63,7 @@ export function FeedbackCarouselCard({
           <CarouselNext
             variant="outline"
             size="icon"
-            className="!relative !left-0 !top-0 h-8 w-8 shrink-0 !translate-x-0 !translate-y-0 rounded-[30px] border-[#ebebeb] bg-[#ebebeb] hover:bg-[#e0e0e0]"
+            className="!relative !left-0 !top-0 h-8 w-8 shrink-0 !translate-x-0 !translate-y-0 rounded-[30px] border-border bg-muted hover:bg-muted/80"
           />
         </div>
       </Carousel>

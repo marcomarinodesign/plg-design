@@ -23,23 +23,17 @@ export function ScoreMetricCard({
   return (
     <Card
       className={cn(
-        "flex h-[179px] w-full max-w-[196px] flex-col items-start justify-between gap-2 rounded-[20px] border border-[#ebebeb] bg-white p-4",
+        "flex h-[179px] w-full max-w-[196px] flex-col items-start justify-between gap-2 rounded-2xl border border-border bg-white p-4 shadow-sm",
         className
       )}
     >
       <CardContent className="flex w-full flex-1 flex-col justify-between gap-2 p-0">
         <div className="flex flex-col gap-2">
           <Icon className="size-6 shrink-0 text-black" aria-hidden />
-          <b
-          className="tabular-nums text-black"
-          style={{ letterSpacing: "-0.01em", lineHeight: "36px", fontSize: "30px" }}
-        >
-          {metric.score}/{maxScore}
-        </b>
-          <p
-            className="text-black"
-            style={{ fontSize: "16px", lineHeight: "24px", fontWeight: 500 }}
-          >
+          <b className="text-3xl font-bold tabular-nums tracking-tight text-black">
+            {metric.score}/{maxScore}
+          </b>
+          <p className="text-base font-medium leading-6 text-black">
             {metric.label}
           </p>
         </div>

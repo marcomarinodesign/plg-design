@@ -6,7 +6,7 @@ import {
 import { Button } from "@/components/ui/button"
 import { ScoreGauge } from "@/components/dashboard/ScoreGauge"
 import type { DashboardHero } from "@/lib/dashboard-types"
-import { Share2, Wrench, Droplets } from "lucide-react"
+import { Share2, Wrench } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 type ScoreHeroCardProps = {
@@ -18,7 +18,7 @@ export function ScoreHeroCard({ hero, className }: ScoreHeroCardProps) {
   return (
     <Card
       className={cn(
-        "flex w-full max-w-[418px] flex-col border-0 rounded-[20px] bg-[#beff50] p-4 shadow-sm xl:h-[576px] xl:min-h-[576px]",
+        "flex w-full max-w-[418px] flex-col border-0 rounded-2xl bg-[#beff50] p-4 shadow-sm xl:h-[576px] xl:min-h-[576px]",
         className
       )}
     >
@@ -33,38 +33,21 @@ export function ScoreHeroCard({ hero, className }: ScoreHeroCardProps) {
           </div>
         </div>
 
-        {/* Nombre empresa: letter-spacing -0.01em, line-height 32px */}
-        <b
-          className="text-center text-black"
-          style={{ letterSpacing: "-0.01em", lineHeight: "32px" }}
-        >
+        {/* Nombre empresa */}
+        <b className="text-center text-lg font-bold tracking-tight leading-8 text-black">
           {hero.businessName}
         </b>
 
-        {/* Plinng Score: 293px, label 48px/800, value 80px/500, /100 20px */}
+        {/* Plinng Score */}
         <div className="flex w-[293px] flex-col items-center justify-center gap-0">
-          <div
-            className="w-full text-center text-black"
-            style={{
-              letterSpacing: "-0.01em",
-              lineHeight: "48px",
-              fontWeight: 800,
-              fontSize: "48px",
-            }}
-          >
+          <div className="w-full text-center text-3xl font-extrabold tracking-tight text-black md:text-4xl">
             Plinng Score
           </div>
           <div className="flex items-baseline justify-center gap-0.5">
-            <span
-              className="tabular-nums text-black"
-              style={{ fontSize: "80px", fontWeight: 500 }}
-            >
+            <span className="tabular-nums text-5xl font-medium text-black md:text-7xl">
               {hero.plinngScore}
             </span>
-            <span
-              className="align-top text-black"
-              style={{ fontSize: "20px", fontWeight: 500 }}
-            >
+            <span className="align-top text-xl font-medium text-black">
               /{hero.maxScore}
             </span>
           </div>
@@ -76,10 +59,7 @@ export function ScoreHeroCard({ hero, className }: ScoreHeroCardProps) {
         </div>
       </CardContent>
       <CardFooter className="mt-auto shrink-0 px-0 pb-0 pt-0">
-        <div
-          className="flex w-[290px] items-center gap-5 text-[14px] text-white"
-          style={{ lineHeight: "24px", fontWeight: 500 }}
-        >
+        <div className="flex w-[290px] items-center gap-5 text-sm font-medium leading-6 text-white">
           <Button
             variant="dark"
             className="h-[52px] flex-1 rounded-[36px] px-4 py-2.5 font-medium"

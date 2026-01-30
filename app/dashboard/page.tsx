@@ -16,8 +16,11 @@ export default function DashboardPage() {
   return (
     <div className="min-h-screen bg-[#f5f5eb]">
       <LpNavbar1 />
-      <main className="container-padding-x section-padding-y mx-auto max-w-7xl">
-        <div className="grid h-[663px] max-h-[663px] grid-cols-1 gap-5 overflow-hidden rounded-[20px] md:grid-cols-2 xl:grid-cols-3 xl:items-stretch">
+      <main className="container-padding-x section-padding-y mx-auto max-w-7xl font-(family-name:--font-inter)">
+        <h1 className="mb-8 text-2xl font-bold tracking-tight text-foreground">
+          Tu puntuación Plinng
+        </h1>
+        <div className="grid grid-cols-1 gap-5 md:grid-cols-2 xl:grid-cols-3 xl:items-stretch">
           {/* Columna izquierda: tarjeta hero */}
           <div className="flex justify-center xl:justify-start">
             <ScoreHeroCard hero={hero} className="h-full shrink-0" />

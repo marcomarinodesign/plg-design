@@ -25,20 +25,14 @@ export function RadarChartCard({
   return (
     <div
       className={cn(
-        "flex w-full max-w-[418px] flex-col items-center rounded-[20px] border border-[#ebebeb] bg-white p-5",
+        "flex w-full max-w-[418px] flex-col items-center rounded-2xl border border-border bg-white p-5 shadow-sm",
         className
       )}
     >
-      <h3
-        className="w-full text-center text-black"
-        style={{ fontSize: "20px", lineHeight: "28px", fontWeight: 700 }}
-      >
+      <h3 className="w-full text-center text-xl font-bold text-black">
         {title}
       </h3>
-      <div
-        className="mt-8 w-full"
-        style={{ height: 225, minHeight: 225, minWidth: 280 }}
-      >
+      <div className="mt-8 h-[225px] min-h-[225px] w-full min-w-[280px]">
         <ResponsiveContainer width="100%" height={225}>
           <RechartsRadarChart
             cx="50%"
